@@ -1,0 +1,36 @@
+.card {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--cor-primaria);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card__container {
+  width: 100%;
+}
+
+.card__detalhes {
+  padding: 10px 0;
+  display: flex;
+  gap: 2%;
+}
+
+.ativo,
+.inativo {
+  padding: 5px 10px;
+  font-weight: 700;
+  border-radius: 10px;
+  color: var(--cor-fundo);
+}
+
+.ativo {
+  background-color: var(--cor-fonte-sucesso);
+}
+
+.inativo {
+  background-color: var(--cor-fonte-erro);
+}

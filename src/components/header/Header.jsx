@@ -5,7 +5,7 @@ export default function Header() {
     <header className={styles.cabecalho}>
       <div className={styles.cabecalho__container}>
         <div className={styles.cabecalho__logo}>
-          <a href='#'>
+          <a href='#environmentCard'>
             <strong>Eco</strong>Track
           </a>
         </div>
