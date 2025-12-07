@@ -1,0 +1,27 @@
+.cabecalho {
+  width: 100%;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cor-primaria);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.cabecalho .cabecalho__container {
+  width: 90%;
+}
+
+.cabecalho .cabecalho__logo a {
+  color: var(--cor-fonte-principal);
+  font-size: var(--tamanho-titulo-secundario);
+  font-weight: 500;
+}
+
+.cabecalho .cabecalho__logo a strong {
+  color: var(--cor-fundo);
+  font-weight: 900;
+}
