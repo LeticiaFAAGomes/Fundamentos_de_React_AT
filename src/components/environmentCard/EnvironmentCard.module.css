@@ -7,7 +7,6 @@
 }
 
 .card {
-  width: 90%;
   padding: 30px;
   align-items: center;
   border: 1px solid var(--cor-primaria);

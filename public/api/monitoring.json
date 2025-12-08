@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "location": "Parque Ibirapuera - São Paulo, SP",
+    "condition": "Bom",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "location": "Margem do Rio Negro - Manaus, AM",
+    "condition": "Crítico",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "location": "Serra do Mar - Paranaguá, PR",
+    "condition": "Bom",
+    "isActive": false
+  },
+  {
+    "id": 4,
+    "location": "Praia do Futuro - Fortaleza, CE",
+    "condition": "Moderado",
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "location": "Pantanal - Corumbá, MS",
+    "condition": "Moderado",
+    "isActive": true
+  },
+  {
+    "id": 6,
+    "location": "Centro Expandido - Rio de Janeiro, RJ",
+    "condition": "Crítico",
+    "isActive": true
+  },
+  {
+    "id": 7,
+    "location": "Chapada Diamantina",
+    "condition": "Bom",
+    "isActive": true
+  },
+  {
+    "id": 8,
+    "location": "Zona Rural - Ribeirão Preto, SP",
+    "condition": "Moderado",
+    "isActive": false
+  },
+  {
+    "id": 9,
+    "location": "Base Antártica - Ilha do Rei George",
+    "condition": "Bom",
+    "isActive": true
+  },
+  {
+    "id": 10,
+    "location": "Manguezais - Santos, SP",
+    "condition": "Crítico",
+    "isActive": true
+  }
+]

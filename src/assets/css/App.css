@@ -63,10 +63,14 @@ main {
 
 main .container {
   width: 90%;
-  padding: 30px 0px;
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 button {
+  width: 13em;
   padding: 10px 20px;
   background-color: var(--cor-primaria);
   border: none;
