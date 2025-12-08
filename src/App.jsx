@@ -1,8 +1,15 @@
 import "./assets/css/App.css";
 import Header from "./components/header/Header";
 import EnvironmentList from "./components/environmentList/EnvironmentList";
+import React, { useState } from "react";
+import MonitoringForm from "./components/monitoringForm/MonitoringForm";
 
 function App() {
+  const [isFormVisible, setIsFormVisible] = useState(false);
+
+  function toggleForm() {
+    setIsFormVisible(!isFormVisible);
+  }
   const monitoringData = [
     {
       id: 1,
@@ -25,6 +32,10 @@ function App() {
     <div className='App'>
       <Header />
       <main>
+        <div className='container'>
+          <button onClick={toggleForm}>{isFormVisible ? "Fechar Formulário" : "Adicionar Local"}</button>
+          {isFormVisible && <MonitoringForm />}
+        </div>
         <EnvironmentList monitoringData={monitoringData} />
       </main>
     </div>
