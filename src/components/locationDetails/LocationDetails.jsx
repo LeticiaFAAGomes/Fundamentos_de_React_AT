@@ -2,7 +2,7 @@ import { useState } from "react";
 import MonitoringSensors from "../monitoringSensors/MonitoringSensors";
 import styles from "./LocationDetails.module.css";
 
-export default function LocationDetails(props) {
+export default function LocationDetails({ id }) {
   const [locationDetails, setLocationDetails] = useState(null);
   const [sensors, setSensors] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -59,7 +59,7 @@ export default function LocationDetails(props) {
           )}
         </div>
       )}
-      {!locationDetails && <button onClick={() => fetchLocationDetails(`./api/monitoringDetails/monitoringDetails${props.id}.json`, `./api/monitoringSensors/monitoringSensors${props.id}.json`)}>Carregar Detalhes</button>}
+      {!locationDetails && <button onClick={() => fetchLocationDetails(`./api/monitoringDetails/monitoringDetails${id}.json`, `./api/monitoringSensors/monitoringSensors${id}.json`)}>Carregar Detalhes</button>}
     </>
   );
 }
