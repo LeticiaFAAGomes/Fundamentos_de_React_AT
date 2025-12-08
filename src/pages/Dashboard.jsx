@@ -9,10 +9,15 @@ import { useState, useEffect } from "react";
 export default function Dashboard() {
   const [monitoringData, setMonitoringData] = useState([]);
   const [isFormVisible, setIsFormVisible] = useState(false);
-  const [filtro, setFiltro] = useState("Todos");
   const [criterioOrdenacao, setCriterioOrdenacao] = useState("location");
-  const dadosFiltrados = filtro === "Todos" ? monitoringData : monitoringData.filter((resultado) => resultado.condition === filtro);
+  const [busca, setBusca] = useState("");
+  const [filtroCondicao, setFiltroCondicao] = useState("Todos");
+
+  const [dataInicio, setDataInicio] = useState("");
+  const [dataFim, setDataFim] = useState("");
   const [favoritos, setFavoritos] = useState([]);
+  const [paginaAtual, setPaginaAtual] = useState(1);
+  const cardsPorPagina = 3;
 
   function toggleForm() {
     setIsFormVisible(!isFormVisible);
@@ -28,14 +33,22 @@ export default function Dashboard() {
     });
   };
 
-  const dadosOrdenados = [...dadosFiltrados].sort((a, b) => {
+  const dadosFiltradosAvancado = monitoringData.filter((dado) => {
+    const buscaLower = busca.toLowerCase();
+    const matchBusca = dado.location.toLowerCase().includes(buscaLower) || dado.condition.toLowerCase().includes(buscaLower) || (dado.description || "").toLowerCase().includes(buscaLower);
+    const matchCondicao = filtroCondicao === "Todos" ? true : dado.condition === filtroCondicao;
+    const matchData = (!dataInicio || dado.lastUpdate >= dataInicio) && (!dataFim || dado.lastUpdate <= dataFim);
+    return matchBusca && matchCondicao && matchData;
+  });
+
+  const dadosOrdenados = [...dadosFiltradosAvancado].sort((a, b) => {
     switch (criterioOrdenacao) {
       case "location":
         return a.location.localeCompare(b.location, "pt-BR");
       case "condition":
         return a.condition.localeCompare(b.condition, "pt-BR");
       case "lastUpdate":
-        return new Date(b.lastUpdate) - new Date(a.lastUpdate);
+        return b.lastUpdate.localeCompare(a.lastUpdate);
       case "status":
         return a.isActive === b.isActive ? 0 : a.isActive ? -1 : 1;
       case "sensors":
@@ -72,9 +85,16 @@ export default function Dashboard() {
 
             <section className='container__main'>
               <div className='container__wrap'>
-                <button onClick={toggleForm}>{isFormVisible ? "Fechar Monitoramento" : "+ Novo Monitoramento"}</button>
-                <FilterBar mudancaFiltro={setFiltro} />
-                <SortControls criterioOrdenacao={criterioOrdenacao} setCriterioOrdenacao={setCriterioOrdenacao} />
+                <div className='input__agrupamento'>
+                  <input type='text' placeholder='Buscar...' className='input__pesquisa' value={busca} onChange={(e) => setBusca(e.target.value)} />
+                  <FilterBar mudancaFiltro={setFiltroCondicao} />
+                  <SortControls criterioOrdenacao={criterioOrdenacao} setCriterioOrdenacao={setCriterioOrdenacao} />
+                </div>
+                <div className='input__agrupamento'>
+                  <input type='date' value={dataInicio || ""} onChange={(e) => setDataInicio(e.target.value)} />
+                  <input type='date' value={dataFim || ""} onChange={(e) => setDataFim(e.target.value)} />
+                  <button onClick={toggleForm}>{isFormVisible ? "Fechar Monitoramento" : "+ Novo Monitoramento"}</button>
+                </div>
               </div>
               {isFormVisible && <MonitoringForm />}
               <EnvironmentList monitoringData={dadosOrdenados} favoritos={favoritos} toggleFavorito={toggleFavorito} />

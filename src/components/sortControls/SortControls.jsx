@@ -1,6 +1,6 @@
 export default function SortControls({ criterioOrdenacao, setCriterioOrdenacao }) {
   return (
-    <div className='sort-controls'>
+    <div className='sort__controls'>
       <select id='ordenacao' value={criterioOrdenacao} onChange={(e) => setCriterioOrdenacao(e.target.value)}>
         <option value='location'>Ordenar por: Localização</option>
         <option value='condition'>Ordenar por: Condição</option>

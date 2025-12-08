@@ -95,8 +95,7 @@ main .container {
 
 main .container__wrap {
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
+  flex-direction: column;
   justify-content: left;
   gap: 10px;
 }
@@ -181,6 +180,11 @@ form .input__grupo {
   gap: 8px;
 }
 
+.input__agrupamento {
+  display: flex;
+  gap: 10px;
+}
+
 form label {
   color: var(--cor-fonte-principal);
 }
@@ -188,7 +192,7 @@ form label {
 input,
 textarea,
 select {
-  width: 100%;
+  width: 90%;
   padding: 14px 10px;
   background-color: transparent;
   color: var(--cor-fonte-principal);
@@ -206,4 +210,12 @@ select optgroup {
 input::placeholder,
 textarea::placeholder {
   color: var(--cor-primaria);
+}
+
+input[type="date"] {
+  width: 20%;
+}
+
+.input__pesquisa {
+  width: 40%;
 }

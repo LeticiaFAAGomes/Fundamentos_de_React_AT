@@ -5,8 +5,8 @@
     "location": "Parque Ibirapuera - São Paulo, SP",
     "condition": "Bom",
     "isActive": true,
-    "startDate": "2024-01-15",
-    "lastUpdate": "2024-06-10T14:30:00Z",
+    "startDate": "2025-01-15",
+    "lastUpdate": "2025-06-10",
     "description": "Monitoramento da qualidade do ar na área central do parque Ibirapuera, focado em partículas finas (PM2.5) e gases poluentes.",
     "isFavorite": true,
     "sensors": [
@@ -34,8 +34,8 @@
     "location": "Margem do Rio Negro - Manaus, AM",
     "condition": "Crítico",
     "isActive": true,
-    "startDate": "2024-02-10",
-    "lastUpdate": "2024-06-10T16:45:00Z",
+    "startDate": "2025-02-10",
+    "lastUpdate": "2025-06-10",
     "description": "Monitoramento de poluição hídrica no Rio Negro, com foco em metais pesados e contaminação por atividades industriais.",
     "isFavorite": true,
     "sensors": [
@@ -64,11 +64,11 @@
   {
     "id": 3,
     "name": "Serra do Mar",
-    "location": "Paranaguá, PR",
+    "location": "Serra do Mar - Paranaguá, PR",
     "condition": "Bom",
     "isActive": false,
-    "startDate": "2024-03-01",
-    "lastUpdate": "2024-06-15T10:30:00Z",
+    "startDate": "2025-03-01",
+    "lastUpdate": "2025-06-15",
     "description": "Área de Mata Atlântica com alta biodiversidade. Monitoramento inativo, mas condição ambiental considerada boa.",
     "isFavorite": false,
     "sensors": [
@@ -82,11 +82,11 @@
   {
     "id": 4,
     "name": "Praia do Futuro",
-    "location": "Fortaleza, CE",
+    "location": "Praia do Futuro - Fortaleza, CE",
     "condition": "Moderado",
     "isActive": true,
-    "startDate": "2024-03-05",
-    "lastUpdate": "2024-06-20T14:00:00Z",
+    "startDate": "2025-03-05",
+    "lastUpdate": "2025-06-20",
     "description": "Praia urbana muito frequentada, com monitoramento ativo. Condição moderada devido ao turismo e urbanização.",
     "isFavorite": false,
     "sensors": [
@@ -116,11 +116,11 @@
   {
     "id": 5,
     "name": "Pantanal",
-    "location": "Corumbá, MS",
+    "location": "Pantanal - Corumbá, MS",
     "condition": "Moderado",
     "isActive": true,
-    "startDate": "2024-03-10",
-    "lastUpdate": "2024-06-22T09:15:00Z",
+    "startDate": "2025-03-10",
+    "lastUpdate": "2025-06-22",
     "description": "Maior área alagável do mundo, com fauna exuberante. Monitoramento ativo, condição moderada por queimadas e pressão humana.",
     "isFavorite": false,
     "sensors": [
@@ -140,11 +140,11 @@
   {
     "id": 6,
     "name": "Centro Expandido",
-    "location": "Rio de Janeiro, RJ",
+    "location": "Centro Expandido - Rio de Janeiro, RJ",
     "condition": "Crítico",
     "isActive": true,
-    "startDate": "2024-03-15",
-    "lastUpdate": "2024-06-25T18:20:00Z",
+    "startDate": "2025-03-15",
+    "lastUpdate": "2025-06-25",
     "description": "Área urbana densa com tráfego intenso e poluição atmosférica. Monitoramento ativo em condição crítica.",
     "isFavorite": false,
     "sensors": [
@@ -163,11 +163,11 @@
   {
     "id": 7,
     "name": "Chapada Diamantina",
-    "location": "Bahia",
+    "location": "Chapada Diamantina - Bahia",
     "condition": "Bom",
     "isActive": true,
-    "startDate": "2024-03-20",
-    "lastUpdate": "2024-06-28T11:45:00Z",
+    "startDate": "2025-03-20",
+    "lastUpdate": "2025-06-28",
     "description": "Parque nacional com cachoeiras e formações rochosas. Monitoramento ativo, condição boa e preservação equilibrada.",
     "isFavorite": true,
     "sensors": [
@@ -191,11 +191,11 @@
   {
     "id": 8,
     "name": "Zona Rural",
-    "location": "Ribeirão Preto, SP",
+    "location": "Zona Rural - Ribeirão Preto, SP",
     "condition": "Moderado",
     "isActive": false,
-    "startDate": "2024-03-25",
-    "lastUpdate": "2024-07-01T13:10:00Z",
+    "startDate": "2025-03-25",
+    "lastUpdate": "2025-07-01",
     "description": "Região agrícola voltada para produção de cana e grãos. Monitoramento inativo, condição moderada devido à agricultura intensiva.",
     "isFavorite": true,
     "sensors": [
@@ -209,11 +209,11 @@
   {
     "id": 9,
     "name": "Base Antártica",
-    "location": "Ilha do Rei George",
+    "location": "Base Antártica - Ilha do Rei George",
     "condition": "Bom",
     "isActive": true,
-    "startDate": "2024-04-01",
-    "lastUpdate": "2024-07-05T08:00:00Z",
+    "startDate": "2025-04-01",
+    "lastUpdate": "2025-07-05",
     "description": "Base de pesquisa localizada na Ilha do Rei George, com monitoramento ativo em boas condições ambientais.",
     "isFavorite": false,
     "sensors": [
@@ -237,11 +237,11 @@
   {
     "id": 10,
     "name": "Manguezais",
-    "location": "Santos, SP",
+    "location": "Manguezais - Santos, SP",
     "condition": "Crítico",
     "isActive": true,
-    "startDate": "2024-04-05",
-    "lastUpdate": "2024-07-08T17:40:00Z",
+    "startDate": "2025-04-05",
+    "lastUpdate": "2025-07-08",
     "description": "Ecossistema costeiro vital para espécies marinhas. Monitoramento ativo, condição crítica devido à poluição e pressão urbana.",
     "isFavorite": true,
     "sensors": [
