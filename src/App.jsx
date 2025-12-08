@@ -3,7 +3,7 @@ import Header from "./components/header/Header";
 import EnvironmentList from "./components/environmentList/EnvironmentList";
 
 function App() {
-  const monitoramentoAmbiental = [
+  const monitoringData = [
     {
       id: 1,
       location: "São Paulo",
@@ -25,7 +25,7 @@ function App() {
     <div className='App'>
       <Header />
       <main>
-        <EnvironmentList monitoramentoAmbiental={monitoramentoAmbiental} />
+        <EnvironmentList monitoringData={monitoringData} />
       </main>
     </div>
   );
