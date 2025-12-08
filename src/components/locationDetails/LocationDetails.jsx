@@ -1,5 +1,6 @@
 import { useState } from "react";
 import MonitoringSensors from "../monitoringSensors/MonitoringSensors";
+import MonitoringSensorForm from "../monitoringSensorForm/MonitoringSensorForm";
 import styles from "./LocationDetails.module.css";
 
 export default function LocationDetails({ id }) {
@@ -7,6 +8,15 @@ export default function LocationDetails({ id }) {
   const [sensors, setSensors] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [isSensorFormVisible, setIsSensorFormVisible] = useState(false);
+
+  function toggleSensorForm() {
+    setIsSensorFormVisible(!isSensorFormVisible);
+  }
+
+  function fecharSensorForm() {
+    setIsSensorFormVisible(false);
+  }
 
   const fetchLocationDetails = async (caminho_details, caminho_sensors) => {
     try {
@@ -46,6 +56,9 @@ export default function LocationDetails({ id }) {
           <p>
             <strong>Descrição:</strong> {locationDetails.description}
           </p>
+          <button onClick={toggleSensorForm}>+ Adicionar Sensor</button>
+
+          {isSensorFormVisible && <MonitoringSensorForm onAddSensor={(sensor) => setSensors([...sensors, sensor])} onFechar={fecharSensorForm} />}
 
           {sensors.length > 0 && (
             <div>
@@ -59,7 +72,11 @@ export default function LocationDetails({ id }) {
           )}
         </div>
       )}
-      {!locationDetails && <button onClick={() => fetchLocationDetails(`./api/monitoringDetails/monitoringDetails${id}.json`, `./api/monitoringSensors/monitoringSensors${id}.json`)}>Carregar Detalhes</button>}
+      {!locationDetails && (
+        <button className='btn' onClick={() => fetchLocationDetails(`./api/monitoringDetails/monitoringDetails${id}.json`, `./api/monitoringSensors/monitoringSensors${id}.json`)}>
+          Carregar Detalhes
+        </button>
+      )}
     </>
   );
 }

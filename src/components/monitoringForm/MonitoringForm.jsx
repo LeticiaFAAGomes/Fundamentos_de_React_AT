@@ -29,7 +29,9 @@ export default function MonitoringForm() {
           <label htmlFor=''>Descriçao</label>
           <textarea placeholder='Ex.: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa eius vitae eligendi ut provident illo.' name='description' id='description' cols='30' rows='10'></textarea>
         </div>
-        <button type='submit'>Enviar</button>
+        <button type='submit' className='btn'>
+          Enviar
+        </button>
       </form>
     </div>
   );

@@ -4,6 +4,7 @@ import Header from "./components/header/Header";
 import EnvironmentList from "./components/environmentList/EnvironmentList";
 import MonitoringForm from "./components/monitoringForm/MonitoringForm";
 import FilterBar from "./components/filterBar/FilterBar";
+import MonitoringSensorForm from "./components/monitoringSensorForm/MonitoringSensorForm";
 
 function App() {
   const [isFormVisible, setIsFormVisible] = useState(false);
@@ -31,9 +32,11 @@ function App() {
       <Header />
       <main>
         <div className='container'>
-          <button onClick={toggleForm}>{isFormVisible ? "Fechar Formulário" : "+ Novo Monitoramento"}</button>
+          <div className='container__wrap'>
+            <button onClick={toggleForm}>{isFormVisible ? "Fechar Monitoramento" : "+ Novo Monitoramento"}</button>
+            <FilterBar mudancaFiltro={setFiltro} />
+          </div>
           {isFormVisible && <MonitoringForm />}
-          <FilterBar mudancaFiltro={setFiltro} />
           <EnvironmentList monitoringData={dadosFiltrados} />
         </div>
       </main>
