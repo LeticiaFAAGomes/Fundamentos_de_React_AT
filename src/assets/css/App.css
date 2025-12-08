@@ -5,11 +5,11 @@
   --cor-fundo: #072533;
   --cor-fonte-principal: #cbe8f5;
   --cor-fonte-secundaria: #a1bdc9;
-  --cor-fonte-sucesso: rgb(136, 250, 136);
-  --cor-fonte-erro: rgb(251, 82, 82);
-  --tamanho-titulo: 2rem;
+  --cor-fonte-sucesso: rgba(136, 250, 136, 0.705);
+  --cor-fonte-erro: rgba(251, 82, 82, 0.737);
+  --tamanho-titulo: 2.2rem;
   --tamanho-subtitulo: 1.3rem;
-  --tamanho-titulo-secundario: 1.7rem;
+  --tamanho-titulo-secundario: 1.8rem;
   --tamanho-texto: 1.2rem;
 }
 

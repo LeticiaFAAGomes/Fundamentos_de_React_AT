@@ -1,8 +1,5 @@
 .card {
   padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   border: 1px solid var(--cor-primaria);
   border-radius: 10px;
@@ -11,6 +8,10 @@
 
 .card__container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
 }
 
 .card__detalhes {
@@ -19,9 +20,13 @@
   gap: 2%;
 }
 
+.card__detalhes span {
+  padding: 5px 0px;
+}
+
 .ativo,
 .inativo {
-  padding: 5px 10px;
+  padding: 5px 10px !important;
   font-weight: 700;
   border-radius: 10px;
   color: var(--cor-fundo);
