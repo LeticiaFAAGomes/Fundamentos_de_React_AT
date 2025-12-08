@@ -1,6 +1,6 @@
 import "./assets/css/App.css";
 import Header from "./components/header/Header";
-import EnvironmentCard from "./components/header/environmentCard/EnvironmentCard";
+import EnvironmentList from "./components/environmentList/EnvironmentList";
 
 function App() {
   const monitoramentoAmbiental = [
@@ -21,16 +21,11 @@ function App() {
       description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa eius vitae eligendi ut provident illo, quisquam, unde earum cumque magnam tenetur, ipsam distinctio ad quo aspernatur. Iste exercitationem natus earum!",
     },
   ];
-
   return (
     <div className='App'>
       <Header />
       <main>
-        <div className='container'>
-          {monitoramentoAmbiental.map((dado, index) => {
-            return <EnvironmentCard dado={dado} key={index} />;
-          })}
-        </div>
+        <EnvironmentList monitoramentoAmbiental={monitoramentoAmbiental} />
       </main>
     </div>
   );
