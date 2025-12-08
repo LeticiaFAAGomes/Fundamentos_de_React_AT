@@ -1,0 +1,18 @@
+li {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: var(--cor-fonte-secundaria);
+  border: 1px solid var(--cor-primaria);
+  border-radius: 10px;
+  list-style: none;
+}
+
+li:hover {
+  background-color: var(--cor-primaria);
+}
+
+span {
+  padding: 10px 0;
+  color: var(--cor-fonte-secundaria);
+}

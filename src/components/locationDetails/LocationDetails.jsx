@@ -1,20 +1,29 @@
 import { useState } from "react";
+import MonitoringSensors from "../monitoringSensors/MonitoringSensors";
+import styles from "./LocationDetails.module.css";
 
-export default function LocationDetails(id) {
+export default function LocationDetails(props) {
   const [locationDetails, setLocationDetails] = useState(null);
+  const [sensors, setSensors] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchLocationDetails = async (arquivo) => {
+  const fetchLocationDetails = async (caminho_details, caminho_sensors) => {
     try {
       setLoading(true);
       setError(null);
 
-      const response = await fetch(`/${arquivo}`);
-      const data = await response.json();
-      setLocationDetails(data);
+      const responseDetails = await fetch(`/${caminho_details}`);
+      const dadosDetails = await responseDetails.json();
+      setLocationDetails(dadosDetails);
+
+      const responseSensor = await fetch(`${caminho_sensors}`);
+      const dadosSensors = await responseSensor.json();
+      setSensors(dadosSensors);
     } catch (error) {
       setError(error.message);
+      setLocationDetails(null);
+      setSensors([]);
     } finally {
       setLoading(false);
     }
@@ -37,9 +46,20 @@ export default function LocationDetails(id) {
           <p>
             <strong>Descrição:</strong> {locationDetails.description}
           </p>
+
+          {sensors.length > 0 && (
+            <div>
+              <h3>Sensores Ativos</h3>
+              <ul>
+                {sensors.map((sensor) => (
+                  <MonitoringSensors sensor={sensor} />
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       )}
-      {!locationDetails && <button onClick={() => fetchLocationDetails(`./api/monitoringDetails/monitoringDetails${id.id}.json`)}>Carregar Detalhes</button>}
+      {!locationDetails && <button onClick={() => fetchLocationDetails(`./api/monitoringDetails/monitoringDetails${props.id}.json`, `./api/monitoringSensors/monitoringSensors${props.id}.json`)}>Carregar Detalhes</button>}
     </>
   );
 }

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "sensor-1",
+    "name": "Sensor de Qualidade do Ar 01",
+    "type": "Qualidade do Ar"
+  },
+  {
+    "id": "sensor-2",
+    "name": "Sensor de Temperatura Ambiente",
+    "type": "Temperatura"
+  },
+  {
+    "id": "sensor-3",
+    "name": "Sensor de Ruído Urbano",
+    "type": "Poluição Sonora"
+  }
+]

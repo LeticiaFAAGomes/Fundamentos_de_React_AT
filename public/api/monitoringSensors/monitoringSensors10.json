@@ -1,0 +1,6 @@
+[
+  { "id": "sensor-22", "name": "Sensor de Temperatura da Água", "type": "Temperatura" },
+  { "id": "sensor-23", "name": "Sensor de PH da Água", "type": "Qualidade da Água" },
+  { "id": "sensor-24", "name": "Sensor de Turbidez", "type": "Qualidade da Água" },
+  { "id": "sensor-25", "name": "Sensor de Metais Pesados", "type": "Poluição" }
+]

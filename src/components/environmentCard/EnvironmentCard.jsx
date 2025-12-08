@@ -18,7 +18,7 @@ export default function EnvironmentCard({ id, location, condition, isActive, las
             {condition && <span>● Condição {condition} </span>}
             {lastUpdate && <span>• Última Atualização: {lastUpdate}</span>}
           </div>
-          <LocationDetails id={id} />
+          <LocationDetails props={id} />
           {description && <p>{description}</p>}
         </div>
       </div>
