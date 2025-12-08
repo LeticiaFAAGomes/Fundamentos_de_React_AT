@@ -3,16 +3,16 @@ import EnvironmentList from "../components/environmentList/EnvironmentList";
 import MonitoringForm from "../components/monitoringForm/MonitoringForm";
 import FilterBar from "../components/filterBar/FilterBar";
 import Favoritos from "../components/favoritosView/FavoritosView";
+import SortControls from "../components/sortControls/SortControls";
 import { useState, useEffect } from "react";
 
 export default function Dashboard() {
   const [monitoringData, setMonitoringData] = useState([]);
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [filtro, setFiltro] = useState("Todos");
+  const [criterioOrdenacao, setCriterioOrdenacao] = useState("location");
   const dadosFiltrados = filtro === "Todos" ? monitoringData : monitoringData.filter((resultado) => resultado.condition === filtro);
   const [favoritos, setFavoritos] = useState([]);
-  const favoritosData = monitoringData.filter((d) => favoritos.includes(d.id));
-  const [mostrarFavoritos, setMostrarFavoritos] = useState(false);
 
   function toggleForm() {
     setIsFormVisible(!isFormVisible);
@@ -27,6 +27,23 @@ export default function Dashboard() {
       }
     });
   };
+
+  const dadosOrdenados = [...dadosFiltrados].sort((a, b) => {
+    switch (criterioOrdenacao) {
+      case "location":
+        return a.location.localeCompare(b.location, "pt-BR");
+      case "condition":
+        return a.condition.localeCompare(b.condition, "pt-BR");
+      case "lastUpdate":
+        return new Date(b.lastUpdate) - new Date(a.lastUpdate);
+      case "status":
+        return a.isActive === b.isActive ? 0 : a.isActive ? -1 : 1;
+      case "sensors":
+        return (b.sensors?.length || 0) - (a.sensors?.length || 0);
+      default:
+        return 0;
+    }
+  });
 
   const fetchMonitoringData = () => {
     fetch("./api/monitoring.json")
@@ -57,11 +74,10 @@ export default function Dashboard() {
               <div className='container__wrap'>
                 <button onClick={toggleForm}>{isFormVisible ? "Fechar Monitoramento" : "+ Novo Monitoramento"}</button>
                 <FilterBar mudancaFiltro={setFiltro} />
+                <SortControls criterioOrdenacao={criterioOrdenacao} setCriterioOrdenacao={setCriterioOrdenacao} />
               </div>
-
               {isFormVisible && <MonitoringForm />}
-
-              <EnvironmentList monitoringData={dadosFiltrados} favoritos={favoritos} toggleFavorito={toggleFavorito} />
+              <EnvironmentList monitoringData={dadosOrdenados} favoritos={favoritos} toggleFavorito={toggleFavorito} />
             </section>
           </div>
         </div>
