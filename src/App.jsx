@@ -1,12 +1,14 @@
 import "./assets/css/App.css";
+import { useState, useEffect } from "react";
 import Header from "./components/header/Header";
 import EnvironmentList from "./components/environmentList/EnvironmentList";
-import { useState, useEffect } from "react";
 import MonitoringForm from "./components/monitoringForm/MonitoringForm";
+import FilterBar from "./components/filterBar/FilterBar";
 
 function App() {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [monitoringData, setMonitoringData] = useState([]);
+  const [filtro, setFiltro] = useState("Todos");
 
   function toggleForm() {
     setIsFormVisible(!isFormVisible);
@@ -23,14 +25,16 @@ function App() {
     fetchMonitoringData();
   }, []);
 
+  const dadosFiltrados = filtro === "Todos" ? monitoringData : monitoringData.filter((resultado) => resultado.condition === filtro);
   return (
     <div className='App'>
       <Header />
       <main>
         <div className='container'>
-          <button onClick={toggleForm}>{isFormVisible ? "Fechar Formulário" : "Adicionar Local"}</button>
+          <button onClick={toggleForm}>{isFormVisible ? "Fechar Formulário" : "+ Novo Monitoramento"}</button>
           {isFormVisible && <MonitoringForm />}
-          <EnvironmentList monitoringData={monitoringData} />
+          <FilterBar mudancaFiltro={setFiltro} />
+          <EnvironmentList monitoringData={dadosFiltrados} />
         </div>
       </main>
     </div>

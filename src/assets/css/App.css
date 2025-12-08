@@ -103,7 +103,8 @@ form label {
 }
 
 input,
-textarea {
+textarea,
+select {
   width: 100%;
   padding: 10px;
   background-color: transparent;
@@ -111,6 +112,12 @@ textarea {
   border: 1px solid var(--cor-primaria);
   border-radius: 5px;
   outline: none;
+}
+
+select option,
+select optgroup {
+  background-color: var(--cor-fundo);
+  font-size: 14px;
 }
 
 input::placeholder,
