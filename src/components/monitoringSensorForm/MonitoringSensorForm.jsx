@@ -16,9 +16,11 @@ export default function MonitoringSensorForm({ onAddSensor, onFechar }) {
     <>
       <div className='bg' onClick={onFechar}>
         <div className='bg__container' onClick={(e) => e.stopPropagation()}>
-          <header>
+          <header style={{ padding: "60px 60px 0px 60px" }}>
             <h2>Adicionar Sensor</h2>
-            <span onClick={onFechar}>X</span>
+            <span style={{ cursor: "pointer" }} onClick={onFechar}>
+              X
+            </span>
           </header>
           <form onSubmit={handleSubmit}>
             <div className='input__individual'>

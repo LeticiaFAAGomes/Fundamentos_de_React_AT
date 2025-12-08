@@ -1,7 +1,7 @@
 import styles from "./EnvironmentCard.module.css";
 import LocationDetails from "../locationDetails/LocationDetails";
 
-export default function EnvironmentCard({ id, location, condition, isActive, lastUpdate, description }) {
+export default function EnvironmentCard({ id, location, condition, isActive, lastUpdate, description, isFavorite, onToggleFavorito }) {
   let ehAtivo = definirStatusMonitoramento();
 
   function definirStatusMonitoramento() {
@@ -12,7 +12,12 @@ export default function EnvironmentCard({ id, location, condition, isActive, las
     <>
       <div className={styles.card}>
         <div className={styles.card__container}>
-          <h2>{`${id}. ${location} `}</h2>
+          <header style={{ display: "flex", justifyContent: "space-between" }}>
+            <h2>{`${id}. ${location} `}</h2>
+            <button style={{ fontSize: "20px", fontWeight: "500", cursor: "pointer", background: "none", border: "none" }} onClick={() => onToggleFavorito(id)}>
+              {isFavorite ? "★ Favorito" : "☆ Favoritar"}
+            </button>
+          </header>
           <div className={styles.card__detalhes}>
             {ehAtivo}
             {condition && <span>● Condição {condition} </span>}

@@ -3,60 +3,70 @@
     "id": 1,
     "location": "Parque Ibirapuera - São Paulo, SP",
     "condition": "Bom",
-    "isActive": true
+    "isActive": true,
+    "isFavorite": true
   },
   {
     "id": 2,
     "location": "Margem do Rio Negro - Manaus, AM",
     "condition": "Crítico",
-    "isActive": true
+    "isActive": true,
+    "isFavorite": true
   },
   {
     "id": 3,
     "location": "Serra do Mar - Paranaguá, PR",
     "condition": "Bom",
-    "isActive": false
+    "isActive": false,
+    "isFavorite": false
   },
   {
     "id": 4,
     "location": "Praia do Futuro - Fortaleza, CE",
     "condition": "Moderado",
-    "isActive": true
+    "isActive": true,
+    "isFavorite": false
   },
   {
     "id": 5,
     "location": "Pantanal - Corumbá, MS",
     "condition": "Moderado",
-    "isActive": true
+    "isActive": true,
+    "isFavorite": false
   },
   {
     "id": 6,
     "location": "Centro Expandido - Rio de Janeiro, RJ",
     "condition": "Crítico",
-    "isActive": true
+    "isActive": true,
+    "isFavorite": false
   },
   {
     "id": 7,
     "location": "Chapada Diamantina",
     "condition": "Bom",
-    "isActive": true
+    "isActive": true,
+    "isFavorite": true
   },
   {
     "id": 8,
     "location": "Zona Rural - Ribeirão Preto, SP",
     "condition": "Moderado",
-    "isActive": false
+    "isActive": false,
+    "isFavorite": true
   },
   {
     "id": 9,
     "location": "Base Antártica - Ilha do Rei George",
     "condition": "Bom",
-    "isActive": true
+    "isActive": true,
+    "isFavorite": false
   },
   {
     "id": 10,
     "location": "Manguezais - Santos, SP",
     "condition": "Crítico",
-    "isActive": true
+    "isActive": true,
+    "isFavorite": true
   }
 ]
