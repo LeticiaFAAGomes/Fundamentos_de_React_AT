@@ -1,0 +1,11 @@
+{
+  "id": 10,
+  "name": "Manguezais",
+  "location": "Santos, SP",
+  "condition": "Crítico",
+  "isActive": true,
+  "startDate": "2024-04-05",
+  "lastUpdate": "2024-07-08T17:40:00Z",
+  "description": "Ecossistema costeiro vital para espécies marinhas. Monitoramento ativo, condição crítica devido à poluição e pressão urbana.",
+  "isFavorite": false
+}

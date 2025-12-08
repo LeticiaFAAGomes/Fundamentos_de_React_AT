@@ -1,0 +1,11 @@
+{
+  "id": 8,
+  "name": "Zona Rural",
+  "location": "Ribeirão Preto, SP",
+  "condition": "Moderado",
+  "isActive": false,
+  "startDate": "2024-03-25",
+  "lastUpdate": "2024-07-01T13:10:00Z",
+  "description": "Região agrícola voltada para produção de cana e grãos. Monitoramento inativo, condição moderada devido à agricultura intensiva.",
+  "isFavorite": false
+}

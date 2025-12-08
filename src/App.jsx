@@ -30,7 +30,6 @@ function App() {
         <div className='container'>
           <button onClick={toggleForm}>{isFormVisible ? "Fechar Formulário" : "Adicionar Local"}</button>
           {isFormVisible && <MonitoringForm />}
-
           <EnvironmentList monitoringData={monitoringData} />
         </div>
       </main>

@@ -38,6 +38,7 @@ h3 {
 
 p,
 span {
+  padding: 10px;
   font-size: var(--tamanho-texto);
   color: var(--cor-fonte-secundaria);
 }

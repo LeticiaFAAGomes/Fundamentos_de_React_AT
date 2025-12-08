@@ -1,6 +1,7 @@
 import styles from "./EnvironmentCard.module.css";
+import LocationDetails from "../locationDetails/LocationDetails";
 
-export default function EnvironmentCard({ id, location, condition, isActive }) {
+export default function EnvironmentCard({ id, location, condition, isActive, lastUpdate, description }) {
   let ehAtivo = definirStatusMonitoramento();
 
   function definirStatusMonitoramento() {
@@ -13,9 +14,12 @@ export default function EnvironmentCard({ id, location, condition, isActive }) {
         <div className={styles.card__container}>
           <h2>{`${id}. ${location} `}</h2>
           <div className={styles.card__detalhes}>
-            <span>● {condition} </span>
             {ehAtivo}
+            {condition && <span>● Condição {condition} </span>}
+            {lastUpdate && <span>• Última Atualização: {lastUpdate}</span>}
           </div>
+          <LocationDetails id={id} />
+          {description && <p>{description}</p>}
         </div>
       </div>
     </>
